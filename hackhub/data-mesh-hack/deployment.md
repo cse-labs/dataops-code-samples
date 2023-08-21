@@ -16,7 +16,7 @@ Irrespective of this choice, the deployment options are the same. If you are wor
 
 This is the recommended way to attempt the hack. In this case, the team members are assigned to a team and multiple instances of the infrastructure is deployed, one for each team. The following diagram shows the overall architecture:
 
-![Hack Architecture](./../images/infra-details.png)
+![Hack Architecture](./../../images/infra-details.png)
 
 Here are the key points to note:
 
