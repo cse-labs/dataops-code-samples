@@ -1,14 +1,13 @@
 # Project
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repository is an addendum to the DataOps section [SolutionOps playbook](https://playbook.microsoft.com/code-with-dataops/) and contains small code snippets and samples that are referenced in the playbook.
 
-As the maintainer of this project, please make a few updates:
+The structure of the repository is still evolving. For now, the code snippets are organized as per the folder structure of the parent playbook repository. The code snippets are organized as per the following structure:
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+- [Solutions](./solutions/README.md)
+- [Capabilities](./capabilities/README.md)
+- [Guidance](./guidance/README.md)
+- [Hackhub](./hackhub/README.md)
 
 ## Contributing
 

@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "org1Name": {
+            "value": "southridge"
+        },
+        "org2Name": {
+            "value": "fourthcoffee"
+        },
+        "SqlAdminLoginPassword": {
+            "value": "[SQL admin login password]"
+        },
+        "deployPurview": {
+            "value": true
+        }
+    }
+}

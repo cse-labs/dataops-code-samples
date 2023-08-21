@@ -1,0 +1,170 @@
+[
+    {
+      "id": "9248bacc-4d5c-4758-a250-4002bd645482",
+      "actors": [
+        {"name": "Eric Ray"},
+        {"name": "Danielle Busey"},
+        {"name": "Priscilla Wayne"}
+      ],
+      "availabilityDate": "2017-03-14T00:00:00",
+      "genre": "Science Fiction",
+      "rating": "PG-13",
+      "releaseYear": 1935,
+      "runtime": 162,
+      "streamingAvailabilityDate": "2017-06-06T00:00:00",
+      "tier": 1,
+      "title": "Happy Theater",
+      "synopsis": "In a distant future, a group of scientists discover a way to travel back in time and visit the year 1935. They soon realize that they can't return to their own time and are forced to adapt to life in the past. As they try to find a way back home, they must navigate the challenges of a world without modern technology while trying to prevent any changes to the timeline. Along the way, they meet a group of actors who are struggling to keep their theater open. With their knowledge of the future, the scientists help the actors put on the performance of a lifetime, but their actions have unforeseen consequences. As they race against time to fix their mistake and return to their own era, they must confront the question of whether their interference in the past was worth the cost."
+    },
+    {
+      "id": "3d01a9eb-215e-41f2-8451-cba7acbf1f46",
+      "actors": [
+        {"name": "Emily Anderson"},
+        {"name": "Matthew Brooks"},
+        {"name": "Olivia Ramirez"}
+      ],
+      "availabilityDate": "2019-08-21T00:00:00",
+      "genre": "Romance",
+      "rating": "PG",
+      "releaseYear": 2020,
+      "runtime": 127,
+      "streamingAvailabilityDate": "2020-01-15T00:00:00",
+      "tier": 2,
+      "title": "Summer Love",
+      "synopsis": "Two young people meet unexpectedly during a summer vacation. As they spend time together, they form a deep connection and share unforgettable experiences. However, their romance is put to the test when they must return to their separate lives at the end of the summer. Will their love be strong enough to endure the challenges of distance and time? Summer Love is a heartwarming tale of love, friendship, and the magic of summer."
+    },
+    {
+      "id": "f2eb41d5-45d7-4bda-8287-4da51e8e205c",
+      "actors": [
+        {"name": "Jason Mitchell"},
+        {"name": "Michelle Lee"},
+        {"name": "Kevin Johnson"}
+      ],
+      "availabilityDate": "2022-05-10T00:00:00",
+      "genre": "Action",
+      "rating": "R",
+      "releaseYear": 2022,
+      "runtime": 145,
+      "streamingAvailabilityDate": "2022-08-01T00:00:00",
+      "tier": 2,
+      "synopsis": "In a world ruled by corruption and crime, a skilled assassin named Ryan Harper seeks redemption for his past actions. He takes on a dangerous mission to take down a powerful crime syndicate that has been terrorizing the city. As he delves deeper into the underworld, he discovers shocking secrets that link his own dark past to the criminal organization. With time running out and enemies closing in, Ryan must confront his demons and make a choice between seeking revenge or finding salvation. Shadow Strike is an action-packed thriller that keeps you on the edge of your seat until the final showdown."
+    },
+    {
+      "id": "17c014b8-1c5e-4d35-9929-8d816e0e1937",
+      "actors": [
+        {"name": "Sophia Lewis"},
+        {"name": "Robert Turner"},
+        {"name": "Ella Roberts"}
+      ],
+      "availabilityDate": "2018-12-05T00:00:00",
+      "genre": "Drama",
+      "rating": "PG-13",
+      "releaseYear": 2019,
+      "runtime": 130,
+      "streamingAvailabilityDate": "2019-03-01T00:00:00",
+      "tier": 1,
+      "synopsis": "Anna, a young aspiring writer, struggles with self-doubt and fear of rejection. When she discovers a series of mysterious letters hidden in the attic of her new apartment, she becomes obsessed with uncovering their origin. As she follows the trail of clues, she uncovers a bittersweet love story that spans generations. Through the words of the past, Anna finds the courage to confront her own fears and pursue her dreams. Whispers of the Heart is a heartwarming tale of love, destiny, and the power of storytelling."
+    },
+    {
+      "id": "b27be58d-7eb0-4802-bc43-09c3aaf5b50c",
+      "actors": [
+        {"name": "David Morris"},
+        {"name": "Jennifer Stone"},
+        {"name": "Timothy Parker"}
+      ],
+      "availabilityDate": "2021-10-18T00:00:00",
+      "genre": "Comedy",
+      "rating": "PG",
+      "releaseYear": 2021,
+      "runtime": 105,
+      "streamingAvailabilityDate": "2022-01-01T00:00:00",
+      "tier": 1,
+      "title": "The Perfect Mix-Up",
+      "synopsis": "Sarah, a successful but workaholic chef, has her life turned upside down when a series of comical misunderstandings lead her to believe she is engaged to a stranger. As she tries to untangle the mix-up and set things right, she finds herself drawn to the charming and quirky man who claims to be her fiancé. Through a series of hilarious misadventures, Sarah must navigate the chaos and unexpected feelings to find her own path to happiness. The Perfect Mix-Up is a delightful romantic comedy that proves sometimes the best recipes are made of laughter and love."
+    },
+    {
+      "id": "1e028781-c370-446f-9c47-5e88853c657e",
+      "actors": [
+        {"name": "Michael Johnson"},
+        {"name": "Karen White"},
+        {"name": "Ryan Adams"}
+      ],
+      "availabilityDate": "2016-07-02T00:00:00",
+      "genre": "Thriller",
+      "rating": "R",
+      "releaseYear": 2016,
+      "runtime": 138,
+      "streamingAvailabilityDate": "2016-10-01T00:00:00",
+      "tier": 2,
+      "title": "Framed",
+      "synopsis": "Mark Taylor, a dedicated and honest police officer, becomes the prime suspect in a high-profile murder case. As evidence against him mounts, he must go on the run to clear his name and find the real killer. With the help of his trusted colleagues and a mysterious informant, Mark delves into the dark underbelly of the city to uncover the truth. But the deeper he digs, the more dangerous the investigation becomes, and he realizes that the conspiracy goes much deeper than he could have ever imagined. Framed is a gripping thriller that will keep you guessing until the final shocking revelation."
+    },
+    {
+      "id": "2de0505a-0516-44de-a558-12f90be94515",
+      "actors": [
+        {"name": "Jessica West"},
+        {"name": "Daniel Lee"},
+        {"name": "Emma Adams"}
+      ],
+      "availabilityDate": "2023-02-12T00:00:00",
+      "genre": "Mystery",
+      "rating": "PG-13",
+      "releaseYear": 2023,
+      "runtime": 120,
+      "streamingAvailabilityDate": "2023-05-01T00:00:00",
+      "tier": 1,
+      "title": "The Enigmatic Puzzle",
+      "synopsis": "In a small, picturesque town, a puzzling series of events unfolds when a mysterious puzzle arrives at the doorstep of a local museum. As curator Emma uncovers the pieces and starts solving the enigmatic puzzle, she realizes that it holds the key to a long-forgotten secret of the town. With the help of her childhood friend and a curious journalist, Emma embarks on a thrilling adventure to unravel the mysteries of the past. The Enigmatic Puzzle is a captivating mystery that weaves together the past and present, leading to an unexpected and heartwarming revelation."
+    },
+    {
+      "id": "b2cc990e-b96f-4b02-a703-5e6ac6c1a882",
+      "actors": [
+        {"name": "Adam Turner"},
+        {"name": "Isabella Roberts"},
+        {"name": "Julia Martinez"}
+      ],
+      "availabilityDate": "2015-06-20T00:00:00",
+      "genre": "Fantasy",
+      "rating": "PG",
+      "releaseYear": 2105,
+      "runtime": 175,
+      "streamingAvailabilityDate": "2015-09-01T00:00:00",
+      "tier": 2,
+      "title": "The Forgotten Kingdom",
+      "synopsis": "In a land where magic is real and mythical creatures roam, a young prince named Ethan sets out on a quest to reclaim his kingdom from an evil sorceress. With the help of a brave and resourceful young woman named Lily, who has a secret of her own, Ethan must navigate through enchanted forests, treacherous mountains, and ancient ruins to find the source of his strength and the key to defeating the sorceress. Along the way, he discovers the true meaning of courage, friendship, and sacrifice. The Forgotten Kingdom is an epic fantasy adventure that transports you to a world of wonder and enchantment."
+    },
+    {
+      "id": "cc4c56b6-e9e0-4ca1-92da-2a616dbd3a90",
+      "actors": [
+        {"name": "Matthew Jenkins"},
+        {"name": "Sophie Miller"},
+        {"name": "Alexander Lee"}
+      ],
+      "availabilityDate": "2020-11-08T00:00:00",
+      "genre": "Adventure",
+      "rating": "PG",
+      "releaseYear": 1890,
+      "runtime": 550,
+      "streamingAvailabilityDate": "2021-02-01T00:00:00",
+      "tier": 1,
+      "title": "The Lost Map",
+      "synopsis": "When a mysterious ancient map is discovered in the attic of an old mansion, a group of adventurous teenagers embarks on a journey to find the hidden treasure it promises. Their quest takes them through dangerous jungles, ancient temples, and underwater caves, all while evading treasure hunters and solving riddles left by an ancient civilization. As they grow closer as a team, they must overcome their fears and trust each other's strengths to reach the ultimate prize. The Lost Map is an action-packed adventure that will inspire you to believe in the power of friendship and the thrill of exploration."
+    },
+    {
+      "id": "e3bba2e0-d4e1-4c14-89d2-d88883b09405",
+      "actors": [
+        {"name": "Laura Reynolds"},
+        {"name": "John Carter"},
+        {"name": "Emily Thompson"}
+      ],
+      "availabilityDate": "2017-12-01T00:00:00",
+      "genre": "Comedy",
+      "rating": "PG",
+      "releaseYear": 2018,
+      "runtime": 118,
+      "streamingAvailabilityDate": "2018-03-01T00:00:00",
+      "tier": 1,
+      "title": "The Great Mix-Up",
+      "synopsis": "When a clumsy but well-meaning scientist accidentally swaps the personalities of a famous actor and a down-to-earth waitress, chaos ensues. The actor must navigate the life of a regular person, while the waitress finds herself in the spotlight. As they try to adapt to their new lives and switch back before it's too late, they learn valuable lessons about empathy, humility, and the importance of staying true to oneself. The Great Mix-Up is a hilarious comedy that reminds us that sometimes the best things in life come when we're least expecting them."
+    }
+  ]
