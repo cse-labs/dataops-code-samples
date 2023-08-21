@@ -7,7 +7,7 @@ The structure of the repository is still evolving. For now, the code snippets ar
 - [Solutions](./solutions/README.md)
 - [Capabilities](./capabilities/README.md)
 - [Guidance](./guidance/README.md)
-- [Data Mesh Hack infra](./data-mesh-hack/deployment.md)
+- [Data Mesh Hack: Infrastructure deployment](./data-mesh-hack/deployment.md)
 
 ## Contributing
 
