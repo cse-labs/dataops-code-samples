@@ -4,7 +4,7 @@
 
 This document describes the process of deploying the Azure infrastructure for the Data Mesh hack. The infrastructure is deployed as a set of Azure resources that collectively represents the customer's existing data estate.
 
-The details about the challenges can be found [here](https://internal.playbook.microsoft.com/code-with-dataops/hackhub/data-mesh-hack/).
+The details about the challenges can be found [here](https://aka.ms/datameshhack).
 
 ## Deployment Overview
 
@@ -72,7 +72,7 @@ The main deployment script is `/scripts/deploy.sh`. This script is used to deplo
 | Parameter | Description                                                                                                                                   | Required | Default         |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | --------------- |
 | -n        | The number of teams participating. The script would deploy these many instances of Azure Infrastructure in a loop.                            | No       | 1               |
-| -p        | The password for the SQL Server admin account.                                                                                                | No       | "mesh#ohPwd001" |
+| -p        | The password for the SQL Server admin account.                                                                                                | No       | Randomly generated |
 | -f        | Flag to indicate if Microsoft Purview should be included in the deployment. It is used during the challenges for scanning Microsoft Power BI. | No       | true            |
 
 If you are attempting the challenges as an individual, you can set `-n` (team count) to 1 and the script will deploy only one instance of the infrastructure.
