@@ -35,6 +35,7 @@ In this case, the challenges are attempted as an individual. The individual who 
 ## Prerequisites
 
 - [Python 3+](https://www.python.org/download/releases/3.0/)
+- [Pip: azure-cosmos](https://pypi.org/project/azure-cosmos/)
 - [Azure Bicep](https://learn.microsoft.com/azure/azure-resource-manager/bicep/overview?tabs=bicep)
 - [AZ CLI 2.50+](https://learn.microsoft.com/cli/azure/install-azure-cli)
 - [jq](https://stedolan.github.io/jq/)
@@ -60,6 +61,7 @@ Ensure that these services are not blocked by Azure Policy. As this is a self-se
 | Azure Data Lake Store    | Microsoft.DataLakeStore   | FourthCoffee "Movies" and "Sales" data                  |
 | Azure Key Vault          | Microsoft.KeyVault        | To store various secret keys                            |
 | Microsoft Purview        | Microsoft.Purview         | Optional, to scan Microsoft Power BI for data discovery |
+| Event Hubs               | Microsoft.EventHub        | Required for Microsoft Purview                          |
 
 > Note:  Resource Provider Registration can be found at https://portal.azure.com/<yourtenantname>.onmicrosoft.com/resource/subscriptions/<yoursubscriptionid>/resourceproviders
 
@@ -108,25 +110,31 @@ The script performs the following operations:
 1. You can use the following command to [clone](https://learn.microsoft.com/azure/devops/repos/git/clone?view=azure-devops&tabs=visual-studio-2022) the repo to the current directory:
 
    ```shell
-   $ git clone https://github.com/cse-labs/opsplaybook.git
+   $ git clone https://github.com/cse-labs/dataops-code-samples.git
    ```
 
-2. Change the current directory to the `data-mesh-hack\scripts` folder:
+2. Change the current directory to the `dataops-code-samples/hackhub/data-mesh-hack/scripts/` folder:
 
    ```shell
-   $ cd data-mesh-hack\scripts
+   $ cd dataops-code-samples/hackhub/data-mesh-hack/scripts/
    ```
 
-2. Open the [deploy.sh](./deploy.sh) script in an editor and review all the parameters and variables defined at the start of the script. You can change the default values if needed or choose to run the script with the default values.
+3. Please make sure that the [Azure Cosmos DB SQL API client library for Python](https://pypi.org/project/azure-cosmos/) is installed. You can run the following command to install the library:
 
-3. Execute the following to sign into the Azure account and set the subscription which you want to deploy the resources to.
+   ```shell
+   $ pip3 install --upgrade azure-cosmos
+   ```
 
-    ```shell
-    $ az login
-    $ az account set --subscription <mysubscription>
-    ```
+4. Open the [deploy.sh](./deploy.sh) script in an editor and review all the parameters and variables defined at the start of the script. You can change the default values if needed or choose to run the script with the default values.
 
-4. Run the following command to deploy the infrastructure for a single team:
+5. Execute the following to sign into the Azure account and set the subscription which you want to deploy the resources to.
+
+   ```shell
+   $ az login
+   $ az account set --subscription <mysubscription>
+   ```
+
+6. Run the following command to deploy the infrastructure for a single team:
 
    ```shell
    $ ./deploy.sh
@@ -135,18 +143,18 @@ The script performs the following operations:
    If you want to deploy the infrastructure for multiple teams, you can use the `-n` option:
 
    ```shell
-    $ ./deploy.sh -n 2
-    ```
+   $ ./deploy.sh -n 2
+   ```
 
-    You can also additionally specify the `-p` and `-f` options as shown below:
+   You can also additionally specify the `-p` and `-f` options as shown below:
 
-    ```shell
-    $ ./deploy.sh -n 2 -p "<password>" -f true
-    ```
+   ```shell
+   $ ./deploy.sh -n 2 -p "<password>" -f true
+   ```
 
    > Note: If you are running the script for the first time, you may be prompted to install the Azure CLI extensions. Follow the instructions to install the extensions.
 
-5. The script will take ~10 minutes per team to complete. So, if you are deploying it with n=3, it will take ~30 minutes to complete. Once the script completes, please carefully review the output messages, and follow the instructions as required.
+7. The script will take ~10 minutes per team to complete. So, if you are deploying it with n=3, it will take ~30 minutes to complete. Once the script completes, please carefully review the output messages, and follow the instructions as required.
 
 ### Validate the Deployment
 
