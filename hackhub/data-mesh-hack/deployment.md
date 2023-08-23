@@ -140,6 +140,12 @@ The script performs the following operations:
    $ ./deploy.sh
    ```
 
+   You can pass the deployment region using `-r` option. If this parameter is not set, "australiaeast" is selected as default deployment region.
+
+   ```shell
+   $ ./deploy.sh -r "uswest2"
+   ```
+
    If you want to deploy the infrastructure for multiple teams, you can use the `-n` option:
 
    ```shell

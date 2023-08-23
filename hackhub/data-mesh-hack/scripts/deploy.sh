@@ -4,8 +4,9 @@ helpFunction()
    echo ""
    echo "Usage: $0 [-n <integer>] [-p <string> [-f <boolean>]"
    echo -e "\t-n The number of teams hacking (1,2,...). Default is 1."
-   echo -e "\t-p The SQL admin password."
+   echo -e "\t-p The SQL admin password. Default is a random password."
    echo -e "\t-f Flag to indicate weather to deploy Microsoft Purview (true/false). Default is false."
+   echo -e "\t-r The deployment region. Default is 'australiaeast'."
    exit 1
 }
 
@@ -31,12 +32,13 @@ org2_files_location="./data/${org2_name}/"
 #echo "Please provide the SQL admin password: " && read -rsp "" sql_admin_password
 #read -rp "Do you want to deploy Microsoft Purview (true/false)? " deploy_purview
 
-while getopts "n:p:f:" opt
+while getopts "n:p:f:r:" opt
 do
    case "$opt" in
       n ) team_count="$OPTARG" ;;
       p ) sql_admin_password="$OPTARG" ;;
       f ) deploy_purview="$OPTARG" ;;
+      r ) deployment_region="$OPTARG" ;;
       ? ) helpFunction ;;
    esac
 done
@@ -53,6 +55,10 @@ if [ -z "${deploy_purview}" ]; then
     deploy_purview=${default_deploy_purview}
 fi
 
+if [ -z "${deployment_region}" ]; then
+    deployment_region=${default_deployment_region}
+fi
+
 for ((i = 1; i <= team_count; i++))
 do
     team_name=$i
@@ -63,7 +69,7 @@ do
 
     if [ "${deploy_purview}" = true ]; then
         case $i in
-            1) region="${default_deployment_region}" ;;
+            1) region="${deployment_region}" ;;
             2) region="japaneast" ;;
             3) region="centralindia" ;;
             4) region="northeurope" ;;
@@ -72,13 +78,14 @@ do
             7) region="francecentral" ;;
             8) region="westus" ;;
             9) region="westus2" ;;
-            *) region="${default_deployment_region}" ;;
+            *) region="${deployment_region}" ;;
         esac
     else
-        region="${default_deployment_region}"
+        region="${deployment_region}"
     fi
 
-    resource_group_name="${resource_group_prefix}-${team_name}"
+    random_suffix="$(echo $RANDOM | md5 | head -c 5)"
+    resource_group_name="${resource_group_prefix}-${team_name}-${random_suffix}"
     deployment_name="${deployment_name_prefix}-$(date -u +'%m%d-%H%M%S')"
     echo "[I] Deploying to resource group '${resource_group_name}' in '${region}' with deployment name '${deployment_name}'"
 
