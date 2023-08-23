@@ -96,9 +96,9 @@ module keyVault './azure-keyvault.bicep' = {
   }
 }
 
-output purviewAccountName string = purviewAccount.outputs.purviewAccountName
-output purviewCatalogUri  string = purviewAccount.outputs.purviewCatalogUri
-output purviewAssignedIdentity string = purviewAccount.outputs.purviewAssignedIdentity
+output purviewAccountName string = deployPurview ? purviewAccount.outputs.purviewAccountName : ''
+output purviewCatalogUri  string = deployPurview ? purviewAccount.outputs.purviewCatalogUri : ''
+output purviewAssignedIdentity string = deployPurview ? purviewAccount.outputs.purviewAssignedIdentity : ''
 
 output storageAccountName string = storageAccountName
 output storageAccountResourceId string = storageAccount.outputs.storageAccountResourceId

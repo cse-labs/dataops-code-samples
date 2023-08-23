@@ -12,7 +12,7 @@ helpFunction()
 
 default_team_count=1
 default_sql_admin_password=$(mktemp -u "XXXXXXXXXXXX")
-default_deploy_purview=true
+default_deploy_purview=false
 default_deployment_region="australiaeast"
 resource_group_prefix="rg-team"
 security_group_prefix="sg-team"
