@@ -32,9 +32,17 @@ def generate_password():
         + random.choice(string.ascii_uppercase)
     )
 
-for i in range(1,no_of_teams+1):
-    for j in range(1,no_of_users_per_team+1):
+for i in range(1, no_of_teams+1):
+    for j in range(1, no_of_users_per_team+1):
+        if (i < 10):
+            i_str = "0" + str(i)
+        else:
+            i_str = str(i)
+        if (j < 10):
+            j_str = "0" + str(j)
+        else:
+            j_str = str(j)
         password = generate_password()
         # If you want to use the same password for everyone, uncomment the line below, comment the line above, and mention your desired password.
         # password = ""
-        writer.writelines(f"User{j} (Team{i}),team{i}.user{j}@{domain},{password},No,User{j}, Team{i},,,,,,,,,,,\n")
+        writer.writelines(f"Team{i_str} - User{j_str},team{i_str}.user{j_str}@{domain},{password},No,User{j_str}, Team{i_str},,,,,,,,,,,\n")
