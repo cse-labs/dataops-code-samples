@@ -11,7 +11,7 @@ helpFunction()
 }
 
 default_team_count=1
-default_sql_admin_password=$(mktemp -u "XXXXXXXXXXXX")
+default_sql_admin_password="$(mktemp -u "XXXXXXXXXXXX")#26"
 default_deploy_purview=false
 default_deployment_region="australiaeast"
 resource_group_prefix="rg-team"

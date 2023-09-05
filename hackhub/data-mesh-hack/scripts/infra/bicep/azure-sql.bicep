@@ -39,9 +39,16 @@ resource sqlserver_CloudSales 'Microsoft.Sql/servers/databases@2022-11-01-previe
   tags: {
     displayName: cloudSalesDbName
   }
+  sku: {
+    name: 'GP_S_Gen5_2'
+    tier: 'GeneralPurpose'
+  }
   properties: {
     collation: 'SQL_Latin1_General_CP1_CI_AS'
     maxSizeBytes: 1073741824
+    zoneRedundant: false
+    autoPauseDelay: 60
+    requestedBackupStorageRedundancy: 'Local'
   }
 }
 
@@ -69,9 +76,16 @@ resource sqlserver_CloudStreaming 'Microsoft.Sql/servers/databases@2022-11-01-pr
   tags: {
     displayName: cloudStreamingDbName
   }
+  sku: {
+    name: 'GP_S_Gen5_2'
+    tier: 'GeneralPurpose'
+  }
   properties: {
     collation: 'SQL_Latin1_General_CP1_CI_AS'
     maxSizeBytes: 1073741824
+    zoneRedundant: false
+    autoPauseDelay: 60
+    requestedBackupStorageRedundancy: 'Local'
   }
 }
 
