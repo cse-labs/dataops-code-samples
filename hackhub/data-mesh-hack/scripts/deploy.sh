@@ -84,7 +84,7 @@ do
         region="${deployment_region}"
     fi
 
-    random_suffix="$(echo $RANDOM | md5 | head -c 5)"
+    random_suffix="$(uuidgen | head -c 8)"
     resource_group_name="${resource_group_prefix}-${team_name}-${random_suffix}"
     deployment_name="${deployment_name_prefix}-$(date -u +'%m%d-%H%M%S')"
     echo "[I] Deploying to resource group '${resource_group_name}' in '${region}' with deployment name '${deployment_name}'"

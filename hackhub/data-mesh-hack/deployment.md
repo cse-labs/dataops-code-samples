@@ -32,25 +32,17 @@ Another reason for attempting these challenges as a hack is to promote discussio
 
 In this case, the challenges are attempted as an individual. The individual who is attempting the hack deploys his/her own infrastructure. The deployment script still relies on Azure AD security groups to grant access to the resources. You can just add yourself as a member of the security group and access the resources.
 
-## Prerequisites
-
-- [Python 3+](https://www.python.org/download/releases/3.0/)
-- [Pip: azure-cosmos](https://pypi.org/project/azure-cosmos/)
-- [Azure Bicep](https://learn.microsoft.com/azure/azure-resource-manager/bicep/overview?tabs=bicep)
-- [AZ CLI 2.50+](https://learn.microsoft.com/cli/azure/install-azure-cli)
-- [jq](https://stedolan.github.io/jq/)
-
 ## Setting up Permissions
 
 Before continuing ensure you understand the permissions needed to run the challenges on your Azure subscription.
 
 As part of the infra deployment, a new resource group is created, and all the Azure resources are deployed in that resource group. So, ideally you should have a subscription owner role on the subscription where you want to deploy the infrastructure.
 
-You shall also have the permission to create Azure AD users and groups. Sometimes, users don't have access to create AD security groups. In such cases, you can skip the creation of the security group and manually grant yourself access to the resource group. For that, you would need to understand the working of the script and tweak it yourself. The script is well documented, and you can easily understand the steps. The script is located at `/scripts/deploy.sh`. 
+You shall also have the permission to create Azure AD users and groups. Sometimes, users don't have access to create AD security groups. In such cases, you can skip the creation of the security group and manually grant yourself access to the resource group. For that, you would need to understand the working of the script and tweak it yourself. The script is well documented, and you can easily understand the steps. The script is located at `/scripts/deploy.sh`.
 
 ## Common Azure Resources
 
-The following is a list of common Azure resources that are deployed and utilized during the infrastructure deployment. 
+The following is a list of common Azure resources that are deployed and utilized during the infrastructure deployment.
 
 Ensure that these services are not blocked by Azure Policy. As this is a self-serve hack, the services that attendees can utilize are not limited to this list so subscriptions with a tightly controlled service catalog may run into issues if the service an attendee wishes to use is disabled via policy.
 
@@ -63,7 +55,7 @@ Ensure that these services are not blocked by Azure Policy. As this is a self-se
 | Microsoft Purview        | Microsoft.Purview         | Optional, to scan Microsoft Power BI for data discovery |
 | Event Hubs               | Microsoft.EventHub        | Required for Microsoft Purview                          |
 
-> Note:  Resource Provider Registration can be found at https://portal.azure.com/<yourtenantname>.onmicrosoft.com/resource/subscriptions/<yoursubscriptionid>/resourceproviders
+> Note:  Resource Provider Registration can be found at <https://portal.azure.com/{yourtenantname}.onmicrosoft.com/resource/subscriptions/{yoursubscriptionid}/resourceproviders>
 
 ## Deployment Instructions
 
@@ -75,7 +67,7 @@ The main deployment script is `/scripts/deploy.sh`. This script is used to deplo
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------- | -------- | --------------- |
 | -n        | The number of teams participating. The script would deploy these many instances of Azure Infrastructure in a loop.                            | No       | 1               |
 | -p        | The password for the SQL Server admin account.                                                                                                | No       | Randomly generated |
-| -f        | Flag to indicate if Microsoft Purview should be included in the deployment. It is used during the challenges for scanning Microsoft Power BI. | No       | true            |
+| -f        | Flag to indicate if Microsoft Purview should be included in the deployment. It is used during the challenges for scanning Microsoft Power BI. | No       | false            |
 
 If you are attempting the challenges as an individual, you can set `-n` (team count) to 1 and the script will deploy only one instance of the infrastructure.
 
@@ -105,62 +97,75 @@ The script performs the following operations:
     - `sqlAdminUsername`: Azure SQL Database admin username
     - `sqlAdminPassword`: Azure SQL Database admin password
 
-## Deployment Instructions
+### Cloud Shell Deployment
 
-1. You can use the following command to [clone](https://learn.microsoft.com/azure/devops/repos/git/clone?view=azure-devops&tabs=visual-studio-2022) the repo to the current directory:
+1. Login to the Azure Portal and choose the subscription you wish to deploy to.
+
+1. Start a "Cloud Shell" and ensure that "Bash" is the selected shell.
+
+1. Ensure that the [Azure Cosmos DB SQL API client library for Python](https://pypi.org/project/azure-cosmos/) is installed in the current shell. You can run the following command to install the library:
 
    ```shell
-   $ git clone https://github.com/cse-labs/dataops-code-samples.git
+   pip3 install --upgrade azure-cosmos
    ```
 
-2. Change the current directory to the `dataops-code-samples/hackhub/data-mesh-hack/scripts/` folder:
+1. [Clone](https://learn.microsoft.com/azure/devops/repos/git/clone?view=azure-devops&tabs=visual-studio-2022) this repository to the Cloud Shell current directory:
 
    ```shell
-   $ cd dataops-code-samples/hackhub/data-mesh-hack/scripts/
+   git clone https://github.com/cse-labs/dataops-code-samples.git
    ```
 
-3. Please make sure that the [Azure Cosmos DB SQL API client library for Python](https://pypi.org/project/azure-cosmos/) is installed. You can run the following command to install the library:
+1. Change the current directory to the `dataops-code-samples/hackhub/data-mesh-hack/scripts/` folder:
 
    ```shell
-   $ pip3 install --upgrade azure-cosmos
+   cd dataops-code-samples/hackhub/data-mesh-hack/scripts/
    ```
 
-4. Open the [deploy.sh](./deploy.sh) script in an editor and review all the parameters and variables defined at the start of the script. You can change the default values if needed or choose to run the script with the default values.
+1. Open the [deploy.sh](./deploy.sh) script in an editor and review all the parameters and variables defined at the start of the script. You can change the default values if needed or choose to run the script with the default values.
 
-5. Execute the following to sign into the Azure account and set the subscription which you want to deploy the resources to.
-
-   ```shell
-   $ az login
-   $ az account set --subscription <mysubscription>
-   ```
-
-6. Run the following command to deploy the infrastructure for a single team:
+1. Run the following command to deploy the infrastructure for a single team:
 
    ```shell
-   $ ./deploy.sh
+   ./deploy.sh
    ```
 
    You can pass the deployment region using `-r` option. If this parameter is not set, "australiaeast" is selected as default deployment region.
 
    ```shell
-   $ ./deploy.sh -r "uswest2"
+   ./deploy.sh -r "uswest2"
    ```
 
    If you want to deploy the infrastructure for multiple teams, you can use the `-n` option:
 
    ```shell
-   $ ./deploy.sh -n 2
+   ./deploy.sh -n 2
    ```
 
    You can also additionally specify the `-p` and `-f` options as shown below:
 
    ```shell
-   $ ./deploy.sh -n 2 -p "<password>" -f true
+   ./deploy.sh -n 2 -p "<password>" -f true
    ```
 
-   > Note: If you are running the script for the first time, you may be prompted to install the Azure CLI extensions. Follow the instructions to install the extensions.
+1. The script will take ~10 minutes per team to complete. So, if you are deploying it with n=3, it will take ~30 minutes to complete. Once the script completes, please carefully review the output messages, and follow the instructions as required.
 
-7. The script will take ~10 minutes per team to complete. So, if you are deploying it with n=3, it will take ~30 minutes to complete. Once the script completes, please carefully review the output messages, and follow the instructions as required.
+### Manual Deployment
+
+If you choose not to use the Cloud Shell deployment, you will need to make sure that you have the following prerequisites installed in a bash shell environment.
+
+- [Python 3+](https://www.python.org/download/releases/3.0/)
+- [Azure Bicep](https://learn.microsoft.com/azure/azure-resource-manager/bicep/overview?tabs=bicep)
+- [AZ CLI 2.50+](https://learn.microsoft.com/cli/azure/install-azure-cli)
+- [jq](https://stedolan.github.io/jq/)
+
+1. Once you have the prerequisites installed, execute the following to sign into the Azure account and set the subscription which you want to deploy the resources to.
+
+   ```shell
+   az login
+   az account set --subscription <mysubscription>
+   ```
+
+2. Proceed with the script installation described in the Cloud Shell instructions starting with step 3, "Ensure that the Azure Cosmos DB..."
 
 ### Validate the Deployment
 
@@ -193,7 +198,7 @@ The script performs the following operations:
    - `cosmosDbAccountKey`: Azure CosmosDB account key
    - `storageAccountKey`: Azure Data Lake storage account key
    - `sqlAdminUsername`: Azure SQL Database admin username
-   - `sqlAdminPassword`: Azure SQL Database admin password 
+   - `sqlAdminPassword`: Azure SQL Database admin password
 
 A script would be added in future to make the validation process easier.
 
