@@ -215,7 +215,7 @@ The script expects that the Azure AD security groups for each team have already 
 (user.userPrincipalName -startsWith "teamX")
 ```
 
-The script [/infra/generate-csv-for-creating-aad-users.py](./infra/generate-csv-for-creating-aad-users.py) can be used to generate the template for creating users in bulk based on the above naming convention. For more information about bulk-creating users in Azure AD, refer to [Bulk create users](https://learn.microsoft.com/azure/active-directory/enterprise-users/users-bulk-add).
+The script [generate-csv-for-creating-aad-users.py](./scripts/infra/generate-csv-for-creating-aad-users.py) can be used to generate the template for creating users in bulk based on the above naming convention. For more information about bulk-creating users in Azure AD, refer to [Bulk create users](https://learn.microsoft.com/azure/active-directory/enterprise-users/users-bulk-add).
 
 With the latest changes, the script now creates the AD security group, if its not present. But this group will have static membership rules. You will have to add the members manually after the deployment completes.
 
