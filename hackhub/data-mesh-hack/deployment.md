@@ -20,17 +20,17 @@ This is the recommended way to attempt the hack. In this case, the team members 
 
 Here are the key points to note:
 
-- The Fabric users are created in Azure AD. Multiple users can be created at the same time using the bulk-create APIs. Participant will use these user credentials to access both Microsoft Fabric and Azure Portal.
-- Multiple users are assigned to the same team. The team is represented as an Azure AD security group with dynamic membership rules based on the user's email address naming convention.
+- The Fabric users are created in Microsoft Entra ID. Multiple users can be created at the same time using the bulk-create APIs. Participant will use these user credentials to access both Microsoft Fabric and Azure Portal.
+- Multiple users are assigned to the same team. The team is represented as an Microsoft Entra security group with dynamic membership rules based on the user's email address naming convention.
 - The infrastructure is spin per team in a separate resource group. i.e., each team would have a resource group where all the resources are deployed.
 - The team's security group is granted "Contributor" permission at the resource group scope so that the members of the team can access the resources in the resource group.
-- The Azure infrastructure is deployed in the same tenant as that of Microsoft Fabric. This is not mandatory, but it is recommended to simplify the deployment using AD security group which otherwise won't be possible.
+- The Azure infrastructure is deployed in the same tenant as that of Microsoft Fabric. This is not mandatory, but it is recommended to simplify the deployment using Microsoft Entra security group which otherwise won't be possible.
 
 Another reason for attempting these challenges as a hack is to promote discussion and brainstorming. Data Mesh is a relatively newer architecture pattern and discussing it as a team will help in understanding the concepts better.
 
 ### As an Individual
 
-In this case, the challenges are attempted as an individual. The individual who is attempting the hack deploys his/her own infrastructure. The deployment script still relies on Azure AD security groups to grant access to the resources. You can just add yourself as a member of the security group and access the resources.
+In this case, the challenges are attempted as an individual. The individual who is attempting the hack deploys his/her own infrastructure. The deployment script still relies on Microsoft Entra security groups to grant access to the resources. You can just add yourself as a member of the security group and access the resources.
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ Before continuing ensure you understand the permissions needed to run the challe
 
 As part of the infra deployment, a new resource group is created, and all the Azure resources are deployed in that resource group. So, ideally you should have a subscription owner role on the subscription where you want to deploy the infrastructure.
 
-You shall also have the permission to create Azure AD users and groups. Sometimes, users don't have access to create AD security groups. In such cases, you can skip the creation of the security group and manually grant yourself access to the resource group. For that, you would need to understand the working of the script and tweak it yourself. The script is well documented, and you can easily understand the steps. The script is located at `/scripts/deploy.sh`. 
+You shall also have the permission to create Microsoft Entra users and groups. Sometimes, users don't have access to create Microsoft Entra security groups. In such cases, you can skip the creation of the security group and manually grant yourself access to the resource group. For that, you would need to understand the working of the script and tweak it yourself. The script is well documented, and you can easily understand the steps. The script is located at `/scripts/deploy.sh`. 
 
 ## Common Azure Resources
 
@@ -90,15 +90,15 @@ The script performs the following operations:
     - `/scripts/data/southridge/movie-southridge-v1.json`: Main movie data (1047 documents)
     - `/scripts/data/southridge/movie-southridge-v2.json`: New movie data (10 documents)
   - Import the "SouthRidge Video" CloudSales and CloudStreaming bacpac files to Azure SQL databases. This is run in background.
-  - The script expects that AD security groups for each team have already been created and the members have been added to the group. The naming convention of the security group is "sg-team-xx" (xx: 01, 02 etc.)
+  - The script expects that Microsoft Entra security groups for each team have already been created and the members have been added to the group. The naming convention of the security group is "sg-team-xx" (xx: 01, 02 etc.)
     - If the security group is found, the scripts would fetch the Object ID of the group.
     - If the security group is not found, the script would create it and use the Object ID of this new group.
   - The security group would be granted `Storage Blob Data Contributor` role on the Azure Data Lake storage account.
   - The security group would be granted `Contributor` role on the resource group.
   - If Microsoft Purview has been deployed, the security group would be granted `Root Collection Admin` role on the Purview account.
-  - If Microsoft Purview has been deployed, the script would also add the Purview identity to a security group named `sg-purview-fabric-scan`. This group is used during the challenge to scan Microsoft Power BI for data discovery.
-    - If the security group `sg-purview-fabric-scan` is found, the scripts would fetch and use its Object ID.
-    - If the security group `sg-purview-fabric-scan` is not found, the script would create it and use the Object ID of this new group. It would also add notes about the manual steps to be performed in the output.
+  - If Microsoft Purview has been deployed, the script would also add the Purview identity to a security group named `sg-pview-fabric-scan`. This group is used during the challenge to scan Microsoft Power BI for data discovery.
+    - If the security group `sg-pview-fabric-scan` is found, the scripts would fetch and use its Object ID.
+    - If the security group `sg-pview-fabric-scan` is not found, the script would create it and use the Object ID of this new group. It would also add notes about the manual steps to be performed in the output.
   - The various secret keys are stored in the Azure Key Vault so that participants can use them during the challenges. The script would create a new Key Vault and store the following secrets in it:
     - `cosmosDbAccountKey`:  Azure CosmosDB account key
     - `storageAccountKey`: Azure Data Lake storage account key
@@ -207,17 +207,17 @@ The [deploy.sh](./deploy.sh) script has a case statement where multiple regions 
 
 You can also choose to not deploy Microsoft Purview by setting the `deployPurview` variable to `false` in the script.
 
-### Azure AD Security Groups
+### Microsoft Entra Security Groups
 
-The script expects that the Azure AD security groups for each team have already been created and the members have been added to the group. The naming convention of the security group is "sg-team-xx" (xx: 01, 02 etc.). These security groups have dynamic membership rules defined. The idea is that we create multiple users with specific naming convention `teamX.userY@<org-domain>`. Because of the dynamic membership rules, the users would be automatically added to the security group. The dynamic membership rule is defined as below:
+The script expects that the Microsoft Entra security groups for each team have already been created and the members have been added to the group. The naming convention of the security group is "sg-team-xx" (xx: 01, 02 etc.). These security groups have dynamic membership rules defined. The idea is that we create multiple users with specific naming convention `teamX.userY@<org-domain>`. Because of the dynamic membership rules, the users would be automatically added to the security group. The dynamic membership rule is defined as below:
 
 ```txt
 (user.userPrincipalName -startsWith "teamX")
 ```
 
-The script [generate-csv-for-creating-aad-users.py](./scripts/infra/generate-csv-for-creating-aad-users.py) can be used to generate the template for creating users in bulk based on the above naming convention. For more information about bulk-creating users in Azure AD, refer to [Bulk create users](https://learn.microsoft.com/azure/active-directory/enterprise-users/users-bulk-add).
+The script [generate-csv-for-creating-entra-users.py](./scripts/infra/generate-csv-for-creating-entra-users.py) can be used to generate the template for creating users in bulk based on the above naming convention. For more information about bulk-creating users in Microsoft Entra ID, refer to [Bulk create users](https://learn.microsoft.com/azure/active-directory/enterprise-users/users-bulk-add).
 
-With the latest changes, the script now creates the AD security group, if its not present. But this group will have static membership rules. You will have to add the members manually after the deployment completes.
+With the latest changes, the script now creates the Microsoft Entra security group, if its not present. But this group will have static membership rules. You will have to add the members manually after the deployment completes.
 
 ### BACPAC file is not imported using bicep
 
@@ -225,8 +225,8 @@ The import of the bacpac files to Azure SQL databases is not done using bicep. T
 
 If you are interested in learning about the import option in bicep, check out the commented section in [/infra/bicep/azure-sql.bicep](./infra/bicep/azure-sql.bicep) file.
 
-### Adding Purview identity to Azure AD security group
+### Adding Purview identity to Microsoft Entra security group
 
-The script adds the Purview identity to a security group named "sg-purview-fabric-scan". This group is used during the challenge to scan Microsoft Power BI for data discovery. If the security group "sg-purview-fabric-scan" is not found, the script would create one for you and add notes above the manual steps to be performed.
+The script adds the Purview identity to a security group named "sg-pview-fabric-scan". This group is used during the challenge to scan Microsoft Power BI for data discovery. If this security group is not found, the script would create one for you and add notes about the manual steps to be performed.
 
 For more information on connecting to and manage a Power BI tenant in Microsoft Purview, check out the Microsoft [documentation](https://learn.microsoft.com/en-us/purview/register-scan-power-bi-tenant?tabs=Scenario1). For information about the scanning of Power BI using read-only admin APIs via Microsoft Purview, check out the Microsoft [documentation](https://learn.microsoft.com/fabric/admin/metadata-scanning-enable-read-only-apis).
