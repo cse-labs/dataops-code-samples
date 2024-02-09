@@ -189,7 +189,7 @@ do
     # This is because the dynamic user membership is not supported in Azure CLI yet.
     # Later, you can either choose to add the members manually to this security group or modify the security group to use dynamic membership rules (preferred).
     if [ -z "${sg_group_id}" ]; then
-        echo "[I] Creating AD security group '${team_security_group}'."
+        echo "[I] Creating Microsoft Entra security group '${team_security_group}'."
         sg_group_id=$(az ad group create --display-name "${team_security_group}" --mail-nickname "${team_security_group}" --output json| jq -r '.id')
         sleep 20
     fi

@@ -1,8 +1,8 @@
-# Script Name: generate-csv-for-creating-aad-users.py
-# Usage: python generate-csv-for-creating-aad-users.py
-# Description: This script generates a CSV file that can be used to create users in Azure Active Directory.
+# Script Name: generate-csv-for-creating-entra-users.py
+# Usage: python generate-csv-for-creating-entra-users.py
+# Description: This script generates a CSV file that can be used to create users in Microsoft Entra ID.
 #              The script asks for the number of teams, number of users per team, domain name, and password length.
-#              It then generates a CSV file with the required information to create users in Azure Active Directory.
+#              It then generates a CSV file with the required information to create users in Microsoft Entra ID.
 #              The password is generated randomly and is of the length specified by the user.
 #              The script can be modified to use the same password for all users.
 import sys
@@ -15,7 +15,7 @@ domain = input("Enter domain name (string): ") or "MngEnvMCAP040685.onmicrosoft.
 password_length = int(input("Enter the desired password length (int): ") or "12")
 
 # Generate Template for AAD User Creation
-writer = open("create-aad-participants.csv", "w")
+writer = open("create-participants.csv", "w")
 
 writer.writelines("version:v1.0\n")
 writer.writelines(
