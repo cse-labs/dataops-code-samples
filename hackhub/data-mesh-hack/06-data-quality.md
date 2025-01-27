@@ -116,12 +116,11 @@ The correct answers is option 'c'. Data validation is concerned with verifying d
 
 ## For more information
 
-- [Microsoft Solutions Playbook: Data quality](../../capabilities/data-quality/index.md)
 - [Great Expectations: Getting started](https://docs.greatexpectations.io/docs/oss/tutorials/quickstart)
 - [Pandera: Data validation API for dataframe-like objects](https://pandera.readthedocs.io/en/stable/index.html)
 - [Youtube Video: Fully Utilizing Spark for Data Validation (Databricks)](https://www.youtube.com/watch?v=f901OJrP5ls)
 - [Youtube Video: Implementing a Data Quality Framework in Purview](https://www.youtube.com/watch?v=gSUSwciqcxY)
 - [Cerberus: Data validation for Python](https://docs.python-cerberus.org/)
-- [Microsoft Learn: Using Azure Monitor with Azure Synapse Analytics](/azure/synapse-analytics/monitoring/how-to-monitor-using-azure-monitor)
+- [Microsoft Learn: Using Azure Monitor with Azure Synapse Analytics](https://learn.microsoft.com/azure/synapse-analytics/monitoring/how-to-monitor-using-azure-monitor)
 
 Please note that these links are for reference only. You are free to use any other useful resources that you find.

@@ -63,5 +63,5 @@ Your feedback is crucial for ongoing improvement of content, tools, and the over
 Now that you have completed the Data Mesh Hack, here are some recommendations for the next steps in your learning journey:
 
 - Explore the [Artificial Intelligence: Large Language Model Lab](https://review.learn.microsoft.com/ai/playbook/technology-guidance/generative-ai/lab/llm-lab/) which has a similar format to the Data Mesh Hack.
-- Familiarize yourself with Microsoft Fabric by reading the [public documentation](/fabric/).
-- Gain hands-on expertise in Microsoft Fabric by following the [Get started with Microsoft Fabric](/training/paths/get-started-fabric/) learning path.
+- Familiarize yourself with Microsoft Fabric by reading the [public documentation](https://learn.microsoft.com/fabric/).
+- Gain hands-on expertise in Microsoft Fabric by following the [Get started with Microsoft Fabric](https://learn.microsoft.com/training/paths/get-started-fabric) learning path.

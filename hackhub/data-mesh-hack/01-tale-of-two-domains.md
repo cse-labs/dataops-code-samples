@@ -121,7 +121,7 @@ The correct answer is option 'c'. Data Governance is a set of practices and proc
 
 - [External Blog: Moving Beyond a Monolithic Data Lake](https://martinfowler.com/articles/data-monolith-to-mesh.html)
 - [External Blog: Data Mesh Principles](https://martinfowler.com/articles/data-mesh-principles.html)
-- [Microsoft Solutions Playbook: Data Mesh Architecture](../../solutions/data-mesh/index.md)
-- [Microsoft Solutions Playbook: Storage on Microsoft Fabric](/fabric/get-started/microsoft-fabric-overview#onelake-and-lakehouse---the-unification-of-lakehouses)
-- [Cloud Adoption Framework - What is Data Mesh?](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh)
-- [Microsoft Learn: Fabric Domains](/fabric/governance/domains)
+- [Microsoft Solutions Playbook: Data Mesh Architecture](https://learn.microsoft.com/data-engineering/playbook/solutions/data-mesh)
+- [Microsoft Solutions Playbook: Storage on Microsoft Fabric](https://learn.microsoft.com/fabric/fundamentals/microsoft-fabric-overview?branch=main#onelake-and-lakehouse---the-unification-of-lakehouses)
+- [Cloud Adoption Framework - What is Data Mesh?](https://learn.microsoft.com/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh)
+- [Microsoft Learn: Fabric Domains](https://learn.microsoft.com/fabric/governance/domains)

@@ -110,9 +110,9 @@ The correct answer is option 'b'. In a Data Mesh architecture, data products mus
 
 ## For more information
 
-- [Microsoft Fabric: Endorsements](/fabric/governance/endorsement-overview)
-- [Microsoft Fabric: Promote or certify items](/fabric/get-started/endorsement-promote-certify)
-- [Microsoft Fabric: Scanning Power BI from Microsoft Purview](/azure/purview/register-scan-power-bi-tenant)
-- [Microsoft Purview: Metamodel](/azure/purview/concept-metamodel)
-- [Microsoft Purview: Manage assets with metamodel](/azure/purview/how-to-metamodel)
-- [Microsoft Solutions Playbook: Data governance](../../capabilities/data-governance/index.md)
+- [Microsoft Fabric: Endorsements](https://learn.microsoft.com/fabric/governance/endorsement-overview)
+- [Microsoft Fabric: Promote or certify items](https://learn.microsoft.com/fabric/get-started/endorsement-promote-certify)
+- [Microsoft Fabric: Scanning Power BI from Microsoft Purview](https://learn.microsoft.com/azure/purview/register-scan-power-bi-tenant)
+- [Microsoft Purview: Metamodel](https://learn.microsoft.com/azure/purview/concept-metamodel)
+- [Microsoft Purview: Manage assets with metamodel](https://learn.microsoft.com/azure/purview/how-to-metamodel)
+

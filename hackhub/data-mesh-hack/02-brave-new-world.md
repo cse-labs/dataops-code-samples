@@ -58,11 +58,11 @@ Here is a quick summary of the different data sources for Southridge and FourthC
 
 ### Understanding Southridge resources
 
-Southridge Video uses an Azure SQL Database to store information about video streaming. The team will note that there is a `Hidden` schema in the databases. This data is for future use and is not meant to be looked into during this challenge. Credentials to access the Azure SQL Database are provided below. Alternatively, the team may set the Azure Active Directory Admin to one of the provided accounts, see [Configure and manage Azure AD authentication with Azure SQL](/azure/azure-sql/database/authentication-aad-configure#provision-microsoft-entra-admin-sql-database).
+Southridge Video uses an Azure SQL Database to store information about video streaming. The team will note that there is a `Hidden` schema in the databases. This data is for future use and is not meant to be looked into during this challenge. Credentials to access the Azure SQL Database are provided below. Alternatively, the team may set the Azure Active Directory Admin to one of the provided accounts, see [Configure and manage Azure AD authentication with Azure SQL](https://learn.microsoft.com/azure/azure-sql/database/authentication-aad-configure?view=azuresql&branch=main&tabs=azure-portal#provision-microsoft-entra-admin-sql-database).
 
 The username for the Azure SQL databases is `southridge`. For password, refer to the login instructions provided separately.
 
-Their movie catalog data with actors/actresses data is separately stored in an Azure Cosmos DB document collection. Access keys for Azure Cosmos DB are available from within the Azure portal, see [Secure access to data in Azure Cosmos DB](/azure/cosmos-db/secure-access-to-data).
+Their movie catalog data with actors/actresses data is separately stored in an Azure Cosmos DB document collection. Access keys for Azure Cosmos DB are available from within the Azure portal, see [Secure access to data in Azure Cosmos DB](https://learn.microsoft.com/azure/cosmos-db/security).
 
 ### Understanding FourthCoffee resources
 
@@ -144,10 +144,10 @@ The correct answer is option 'c'. In a greenfield project, focusing on a single 
 
 ## For more information
 
-- [Microsoft Fabric: OneLake shortcuts](/fabric/onelake/onelake-shortcuts)
-- [Microsoft Fabric: ADF Copy activity](/fabric/data-factory/copy-data-activity)
-- [Microsoft Fabric: Moving and transforming data with dataflows and data pipelines](/fabric/data-factory/transform-data)
-- [Microsoft Fabric: Tutorial on prepare and transforming data in Lakehouse](/fabric/data-engineering/tutorial-lakehouse-data-preparation)
-- [Azure Databricks: Medallion Lakehouse Architecture](/azure/databricks/lakehouse/medallion)
+- [Microsoft Fabric: OneLake shortcuts](https://learn.microsoft.com/fabric/onelake/onelake-shortcuts)
+- [Microsoft Fabric: ADF Copy activity](https://learn.microsoft.com/fabric/data-factory/copy-data-activity)
+- [Microsoft Fabric: Moving and transforming data with dataflows and data pipelines](https://learn.microsoft.com/fabric/data-factory/transform-data)
+- [Microsoft Fabric: Tutorial on prepare and transforming data in Lakehouse](https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-data-preparation)
+- [Azure Databricks: Medallion Lakehouse Architecture](https://learn.microsoft.com/azure/databricks/lakehouse/medallion)
 - [Microsoft Fabric Blog: Lakehouse Sharing and Access Permission Management](https://blog.fabric.microsoft.com/blog/lakehouse-sharing-and-access-permission-management)
-- [Microsoft Solutions Playbook: Data Lake](../../solutions/modern-data-warehouse/index.md#understanding-data-lake)
+- [Microsoft Solutions Playbook: Data Lake](https://learn.microsoft.com/data-engineering/playbook/solutions/modern-data-warehouse/#understanding-data-lake)

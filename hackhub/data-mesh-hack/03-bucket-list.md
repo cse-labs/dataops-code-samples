@@ -109,8 +109,8 @@ The correct answer is option 'a'. The data platform owners are responsible for p
 
 ## For more information
 
-- [Microsoft Fabric: OneLake shortcuts](/fabric/onelake/onelake-shortcuts)
-- [Microsoft Fabric: ADF Copy activity](/fabric/data-factory/copy-data-activity)
-- [Microsoft Fabric: Moving and transforming data with dataflows and data pipelines](/fabric/data-factory/transform-data)
-- [Lakehouse Tutorial: Prepare and transform data in the lakehouse](/fabric/data-engineering/tutorial-lakehouse-data-preparation)
-- [Lakehouse Tutorial: Building reports in Microsoft Fabric](/fabric/data-engineering/tutorial-lakehouse-build-report)
+- [Microsoft Fabric: OneLake shortcuts](https://learn.microsoft.com/fabric/onelake/onelake-shortcuts)
+- [Microsoft Fabric: ADF Copy activity](https://learn.microsoft.com//fabric/data-factory/copy-data-activity)
+- [Microsoft Fabric: Moving and transforming data with dataflows and data pipelines](https://learn.microsoft.com/fabric/data-factory/transform-data)
+- [Lakehouse Tutorial: Prepare and transform data in the lakehouse](https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-data-preparation)
+- [Lakehouse Tutorial: Building reports in Microsoft Fabric](https://learn.microsoft.com/fabric/data-engineering/tutorial-lakehouse-build-report)

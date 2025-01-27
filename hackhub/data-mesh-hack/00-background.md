@@ -41,8 +41,8 @@ During this upskilling hack, the focus is on redesigning the data platform while
 
 ## For more information
 
-- [DataOps for the modern data warehouse](/azure/architecture/example-scenario/data-warehouse/dataops-mdw)
-- [Microsoft Solutions Playbook: Modern Data Warehouse](../../solutions/modern-data-warehouse/index.md)
+- [DataOps for the modern data warehouse](https://learn.microsoft.com/azure/architecture/databases/architecture/dataops-mdw)
+- [Microsoft Solutions Playbook: Modern Data Warehouse](https://learn.microsoft.com/en-us/data-engineering/playbook/solutions/modern-data-warehouse)
 - [External Blog: Moving Beyond a Monolithic Data Lake](https://martinfowler.com/articles/data-monolith-to-mesh.html)
-- [Microsoft Solutions Playbook: Data Mesh Architecture](../../solutions/data-mesh/index.md)
-- [Microsoft Learning Path: Get started with Microsoft Fabric](/training/paths/get-started-fabric/)
+- [Microsoft Solutions Playbook: Data Mesh Architecture](https://learn.microsoft.com/en-us/data-engineering/playbook/solutions/data-mesh)
+- [Microsoft Learning Path: Get started with Microsoft Fabric](https://learn.microsoft.com/en-us/training/paths/get-started-fabric)
