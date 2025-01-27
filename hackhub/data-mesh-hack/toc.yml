@@ -1,0 +1,28 @@
+items:
+  - name: Introduction
+    href: index.md
+    public: false
+  - name: Background Story
+    href: 00-background.md
+    public: false
+  - name: Challenge 1. A Tale of Two Domains
+    href: 01-tale-of-two-domains.md
+    public: false
+  - name: Challenge 2. Brave New World
+    href: 02-brave-new-world.md
+    public: false
+  - name: Challenge 3. The Bucket List
+    href: 03-bucket-list.md
+    public: false
+  - name: Challenge 4. The Rise of Governance
+    href: 04-governance.md
+    public: false
+  - name: Challenge 5. Search Party
+    href: 05-search-party.md
+    public: false
+  - name: Challenge 6. The Quality Awakens
+    href: 06-data-quality.md
+    public: false
+  - name: Wrap Up
+    href: 07-wrap-up.md
+    public: false
